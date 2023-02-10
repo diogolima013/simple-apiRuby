@@ -1,10 +1,18 @@
 class ContactSerializer < ActiveModel::Serializer
-  attributes :id, :name, :email, :birthdate
+  attributes :id, :name, :email, :birthdate#, :author
 
   #Associations
   belongs_to :kind
   has_many :phones
   has_one :address
+
+  # def author 
+  #   "Jackson Pires"
+  # end
+
+  meta do 
+    { author: "Diogones"}
+  end
 
   def attributes(*args)
     h = super(*args)
