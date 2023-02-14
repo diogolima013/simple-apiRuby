@@ -3,12 +3,15 @@ class ContactsController < ApplicationController
 
   # GET /contacts
   def index
-    @contacts = Contact.all
-
+    if params[:version] == '1'
+      @contacts = Contact.all
+    elsif params[:version] == '2'  
+      @contacts = Contact.last(5).reverse
+    end
     render json: @contacts
   end
 
-  # GET /contacts/1
+  # GET /contacts/1 
   def show
     render json: @contact, include: [:kind, :address, :phones]#, meta: { author: "Jackson Pires"} #include: [:kind, :phones, :address]
   end
