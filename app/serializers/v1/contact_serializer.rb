@@ -1,5 +1,6 @@
 module V1
   class ContactSerializer < ActiveModel::Serializer
+
     attributes :id, :name, :email, :birthdate#, :author
   
     #Associations
