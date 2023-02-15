@@ -21,6 +21,8 @@ gem 'foreman'
 gem 'versionist'
 
 gem 'kaminari'
+
+gem 'rspec-rails', '~> 3.5' 
 # gem 'api-pagination'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
